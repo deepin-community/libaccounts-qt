@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service-type id="e-mail">
+  <translations>translation_file</translations>
+  <name>Electronic mail</name>
+  <description>Email test description</description>
+  <icon>email_icon</icon>
+  <tags>
+    <tag>email</tag>
+    <tag>messaging</tag>
+  </tags>
+</service-type>

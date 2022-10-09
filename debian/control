@@ -1,0 +1,52 @@
+Source: libaccounts-qt
+Section: libs
+Priority: optional
+Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Maximiliano Curia <maxy@debian.org>, Diane Trout <diane@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libaccounts-glib-dev (>= 1.23),
+               libglib2.0-dev,
+               pkg-config,
+               qt5-qmake,
+               qtbase5-dev,
+               qtchooser
+Build-Depends-Indep: doxygen, graphviz, qttools5-dev-tools
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://gitlab.com/accounts-sso/libaccounts-qt
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/3rdparty/libaccounts-qt
+Vcs-Git: https://salsa.debian.org/qt-kde-team/3rdparty/libaccounts-qt.git
+
+Package: libaccounts-qt5-dev
+Section: libdevel
+Architecture: any
+Depends: libaccounts-qt5-1 (= ${binary:Version}),
+         ${misc:Depends},
+Description: Accounts database access Qt version - Qt5 development files
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains files the development files of the accounts database
+ access Qt5 API.
+
+Package: libaccounts-qt5-1
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Accounts database access Qt version - Qt5 shared library
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains shared libraries to be used by Qt5 applications.
+
+Package: libaccounts-qt-doc
+Section: doc
+Architecture: all
+Depends: libjs-jquery,
+         ${misc:Depends},
+Description: Accounts database access Qt version - documentation
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains developer documentation.

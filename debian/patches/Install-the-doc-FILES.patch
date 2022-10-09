@@ -1,0 +1,21 @@
+From: Maximiliano Curia <maxy@gnuservers.com.ar>
+Date: Thu, 13 Jul 2017 15:56:37 +0200
+Subject: Install the doc FILES
+
+---
+ doc/doc.pri | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/doc.pri b/doc/doc.pri
+index 33f8bc2..43229ff 100644
+--- a/doc/doc.pri
++++ b/doc/doc.pri
+@@ -61,7 +61,7 @@ include( ../common-installs-config.pri )
+ #-----------------------------------------------------------------------------
+ documentation.path = $${INSTALL_PREFIX}/share/doc/$${PROJECT_NAME}
+ for( folder, DOC_FOLDERS ) {
+-    documentation.files += $${TOP_BUILD_DIR}/$${folder}
++    documentation.extra += cp -r "$${TOP_BUILD_DIR}/$${folder}" "${DESTDIR}$${INSTALL_PREFIX}/share/doc/$${PROJECT_NAME}";
+ }
+ # make sure docs are generated before trying to install anything
+ documentation.depends  = docs
